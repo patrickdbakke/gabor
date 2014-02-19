@@ -1,0 +1,15 @@
+@import "compass/reset";
+
+@import "shared/fonts";
+@import "shared/colors";
+html{
+	overflow:hidden;
+}
+body{
+	font-family:"OpenSansLight",sans,sans-serif;;
+	background:$bg;
+	border:0;
+	overflow:hidden;
+}
+
+@import "gabor";
