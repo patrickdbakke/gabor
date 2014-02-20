@@ -2299,13 +2299,20 @@ html {
 /* line 8, ../sass/site.scss */
 body {
   font-family: "OpenSansLight",sans,sans-serif;
-  background: #333333;
   border: 0;
   overflow: hidden;
 }
 
 /* line 1, ../sass/_gabor.scss */
+body {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+/* line 6, ../sass/_gabor.scss */
 #gabor {
+  background: #999999;
   position: absolute;
   top: 0;
   left: 0;
