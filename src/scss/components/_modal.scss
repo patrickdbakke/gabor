@@ -1,0 +1,70 @@
+.modalWrap {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    left: 0;
+    z-index: 10000000;
+    text-align: center;
+    width: 100%;
+    @include vertical-fix;
+    &:after {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.25);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: '';
+        z-index: -1;
+    }
+    .modal {
+        z-index: 2;
+        background: $white;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        display: inline-block;
+        max-height: 80%;
+        max-width: 50%;
+        overflow: auto;
+        position: relative;
+        text-align: left;
+        min-width: 20em;
+        vertical-align: middle;
+        &.hasFooter {
+            padding-bottom: 4.5em;
+        }
+        .title {
+            font-size: 1.5em;
+            font-weight: 500;
+            padding: 1em;
+        }
+        .row {
+            position: relative;
+            padding: 0 1.5em;
+            .label {
+                color: $grey;
+                margin-bottom: 1em;
+                font-size: .8em;
+            }
+            .value {
+                margin-bottom: 1em;
+            }
+            .value.right {
+                position: absolute;
+                bottom: 0;
+                text-align: right;
+                right: 1.5em;
+                margin-bottom: 0;
+            }
+        }
+        .footer {
+            text-align: right;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2em;
+            padding: .5em 1.5em;
+            border-top: 1px solid $grey-200;
+        }
+    }
+}

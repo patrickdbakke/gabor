@@ -1,0 +1,30 @@
+$headerHeight: 4em;
+$footerHeight: 0;
+
+$backgroundColor: #999;
+$headerColor: $blue;
+$footerColor: $green;
+
+@import "shared/functions";
+@import "shared/material";
+
+@import "components/header";
+@import "components/content";
+@import "components/footer";
+@import "components/modal";
+
+#content {
+    background: $backgroundColor;
+}
+
+#gabor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#header > div, #footer > div {
+    font-size: 1.5em;
+}

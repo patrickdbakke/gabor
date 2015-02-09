@@ -3,16 +3,42 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>Gabor Stimuli</title>
-		<link rel="stylesheet" type="text/css" href="/assets/css/site.css" />
-		<script type="text/javascript" src="/assets/js/jquery.min.js" id="jquery"></script>
-		<script type="text/javascript" src="/assets/js/modernizr-2.6.2.min.js"></script>
-		<script type="text/javascript" src="/assets/js/underscore.min.js"></script>	
+		<link rel="stylesheet" type="text/css" href="./src/css/site.css" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto:500,400,300,500italic,300italic,900italic,400italic,100,700italic,700,100italic,900' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="./src/js/bower_components/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+		<script type="text/javascript" src="./src/js/bower_components/jquery/dist/jquery.js" id="jquery"></script>
+		<script type="text/javascript" src="./src/js/bower_components/lodash/lodash.js"></script>
+		<script type="text/javascript" src="./src/js/bower_components/angular/angular.js"></script>
+		<script type="text/javascript" src="./src/js/bower_components/angular-google-analytics/dist/angular-google-analytics.js"></script>
+		<script type="text/javascript" src="./src/js/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+		<script src="//localhost:35729/livereload.js"></script>
 	</head>
 	<body class="">
-		<div id="content"></div>
-		<canvas id="gabor"></canvas>
+		<div ng-app="gabor">
+			<div ui-view></div>
+			<!-- <div social></div> -->
+		</div>
 	</body>
 	<footer>
-		<script type="text/javascript" src="/gabor.js"></script>
+		<script type="text/javascript" src="./src/js/gabor/gabor.js"></script>
+		<script type="text/javascript" src="./src/js/gabor/level.js"></script>
+		<script type="text/javascript" src="./src/js/gabor/patch.js"></script>
+		<script type="text/javascript" src="./src/js/gabor/events.js"></script>
+		
+		<script type="text/javascript" src="./src/js/app/app.js"></script>
+		
+		<script type="text/javascript" src="./src/js/app/services/notification.js"></script>
+		<script type="text/javascript" src="./src/js/app/services/modal.js"></script>
+		
+		<script type="text/javascript" src="./src/js/app/directives/social.js"></script>
+		
+		<script type="text/javascript" src="./src/js/app/controllers/game.js"></script>
+		<script type="text/javascript" src="./src/js/app/controllers/score.js"></script>
+
+		<script type="text/javascript" src="./src/js/app/config.js"></script>
+		<script type="text/javascript" src="./src/js/app/templates.js"></script>
+		<script type="text/javascript" src="./src/js/app/routes.js"></script>
 	</footer>
 </html>

@@ -1,1 +1,6 @@
 .sass-cache
+**/node_modules
+**/bower_components
+src/js/app/templates.js
+src/css/site.css
+src/css/site.css.map

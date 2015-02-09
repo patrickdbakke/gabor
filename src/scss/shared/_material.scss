@@ -1,0 +1,50 @@
+.md-icon {
+    display: inline-block !important;
+    vertical-align: middle !important;
+    text-align: center;
+}
+
+button {
+    border: none;
+    font-size: inherit;
+    text-transform: uppercase;
+    color: $blue;
+    height: 2em;
+    vertical-align: middle;
+    padding: 0 .5em;
+    background: transparent;
+    border: 1px solid $blue;
+    border-radius: 3px;
+    cursor: pointer;
+    &.flat {
+        border: 1px solid transparent;
+    }
+    &:focus {
+        outline: none;
+    }
+    &.md-circle {
+        border: none;
+        border-radius: 100em;
+        color: #fff;
+        height: 2em;
+        width: 2em;
+        background: $red;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.notification {
+    position: absolute;
+    background: #323232;
+    color: $white;
+    bottom: 2em;
+    left: 2em;
+    z-index: 100;
+    padding: 0.666em .75em;
+    border-radius: 3px;
+    font-size: .875em;
+    &.right {
+        left: auto;
+        right: 2em;
+    }
+}

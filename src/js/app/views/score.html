@@ -1,0 +1,30 @@
+<div class="modalWrap">
+	<div class="modal score hasFooter">
+		<div class="title">Score</div>
+		<div class="row">
+			<div class="label">Hits</div>
+			<!-- <div class="value">{{hits}}</div> -->
+			<div class="value right score">{{hitsScore}}</div>
+		</div>
+		<div class="row">
+			<div class="label">Misses</div>
+			<!-- <div class="value">{{misses}}</div> -->
+			<div class="value right score">{{missesScore}}</div>
+		</div>
+		<div class="row" ng-if="difficulty > 1">
+			<div class="label">Level Bonus</div>
+			<div class="value right score">X {{difficultyScore}}</div>
+		</div>
+		<div class="row" ng-repeat="bonus in bonuses">
+			<div class="label">{{bonus.name}} <span ng-if="bonus.multiplier"><span class="md md-clear"></span> {{bonus.multiplier}}</span></div>
+			<div class="value right">{{bonus.value}}</div>
+		</div>
+		<div class="row">
+			<div class="">Total</div>
+			<div class="value right">{{levelScore}}</div>
+		</div>
+		<div class="footer">
+			<button class="flat" ng-click="continue()">continue</button>
+		</div>
+	</div>
+</div>

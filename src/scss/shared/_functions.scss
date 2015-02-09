@@ -1,0 +1,10 @@
+@mixin vertical-fix {
+    &:before {
+        height: 100%;
+        width: 1px;
+        margin-left: -1px;
+        content: '';
+        vertical-align: middle;
+        display: inline-block;
+    }
+}

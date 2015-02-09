@@ -1,0 +1,12 @@
+<div>
+	<div class="menu">
+		<div class="md md-icon md-menu"></div>
+		<div class="title">
+			Gabor Stimuli
+		</div>
+		<div class="md md-icon md-chevron-right" ng-if="subtitle"></div>
+		<div class="subtitle" ng-if="subtitle">{{subtitle}}</div>
+		<div class="score">{{score}}</div>
+	</div>
+	<div id="setProgress" style="width:{{timeSpent/totalTime*100}}%"></div>
+</div>

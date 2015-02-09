@@ -1,0 +1,40 @@
+#header {
+    background: $headerColor;
+    color: $white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $headerHeight;
+    z-index: 2;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#setProgress {
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: $blue-700;
+}
+
+.menu {
+    z-index: 1;
+    position: relative;
+    & > div {
+        float: left;
+        display: inline-block;
+        line-height: #{64 / 24 * 1em};
+    }
+    .md-menu {
+        width: 3em;
+        height: 2.666em;
+        color: $black;
+    }
+    .score {
+        color: $black;
+        float: right;
+        margin: 0 1em;
+    }
+}
