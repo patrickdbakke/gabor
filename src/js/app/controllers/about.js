@@ -1,6 +1,6 @@
 "use strict";
 angular.module("gabor")
-	.controller("GameController", function($scope, $stateParams, GAMES, $controller){
+	.controller("AboutController", function($scope, $stateParams, GAMES, $sce, $controller){
 		var activeGame = _.find(GAMES, {
     		name: $stateParams.gameName
     	});
@@ -11,18 +11,6 @@ angular.module("gabor")
     		$scope.game = $controller(activeGame.controller, $scope.$new());
     	}
 
-		$scope.score = {
-			missesThisLevel: 0,
-			hitsThisLevel: 0,
-			levelScore: 0,
-
-			misses: 0,
-			hits: 0,
-			totalScore: 0,
-			streak: 0,
-		};
-		
-		$scope.difficulty = 1;
-
+    	$scope.about = $sce.trustAsHtml($scope.game.about);
 		$scope.header.title = $scope.game.title;
 	});

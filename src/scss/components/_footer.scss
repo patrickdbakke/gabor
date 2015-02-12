@@ -1,11 +1,11 @@
 #footer {
-    background: $footerColor;
+    background: $white;
     color: $white;
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    height: $footerHeight;
-    z-index: 2;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    height: #{$footerHeight - 3em};
+    padding: 1.5em 2em;
+    z-index: 1;
 }

@@ -1,0 +1,19 @@
+<div id="games">
+	<div class="card game" ng-repeat = "game in games">
+		<div class="card-logo" style="background-image:url({{game.logo}});"></div>
+		<div class="card-title" style="{{game.color}}">{{game.title}}</div>
+		<div class="card-content">{{game.summary}}</div>
+		<div class="card-actions">
+			<button 
+				class="flat " 
+				ui-sref="root.games.game.about({gameName: game.name})">
+				Learn More
+			</button>
+			<button 
+				class="flat action"
+				ui-sref="root.games.game.play({gameName: game.name})">
+				Play
+			</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,76 @@
+@import "font-awesome/font-awesome";
+
+.social {
+    .item {
+        width: 2em;
+        height: 2em;
+        text-indent: -9999px;
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+        color: $white;
+        -webkit-transition: color 150ms linear,background-color 150ms linear,background-size 150ms linear;
+        -moz-transition: color 150ms linear,background-color 150ms linear,background-size 150ms linear;
+        -o-transition: color 150ms linear,background-color 150ms linear,background-size 150ms linear;
+        transition: color 150ms linear,background-color 150ms linear,background-size 150ms linear;
+        &:before {
+            position: absolute;
+            top: 22%;
+            font-size: 1.2em;
+            width: 100%;
+            text-align: center;
+            text-indent: 0;
+            z-index: 2;
+            left: 0;
+        }
+        &.me {
+            background-image: url("http://patrickdbakke.com/assets/img/me.png");
+            background-size: 150%;
+            margin-bottom: 0.5em;
+            background-position: center center;
+            &:hover {
+                background-size: 175%;
+            }
+        }
+        &.fa-github {
+            background-color: $github;
+            &:hover {
+                background-color: $white;
+                color: $github;
+            }
+        }
+        &.fa-linkedin {
+            background-color: $linkedin;
+            &:hover {
+                background-color: $white;
+                color: $linkedin;
+            }
+        }
+        &.fa-facebook {
+            background-color: $facebook;
+            &:hover {
+                background-color: $white;
+                color: $facebook;
+            }
+        }
+        &.fa-twitter {
+            background-color: $twitter;
+            &:hover {
+                background-color: $white;
+                color: $twitter;
+            }
+        }
+        &.fa-google-plus {
+            background-color: $gplus;
+            &:hover {
+                background-color: $white;
+                color: $gplus;
+            }
+        }
+    }
+    .break {
+        width: .5em;
+        height: 100%;
+        display: inline-block;
+    }
+}

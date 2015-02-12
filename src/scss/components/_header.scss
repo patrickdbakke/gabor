@@ -6,7 +6,7 @@
     left: 0;
     right: 0;
     height: $headerHeight;
-    z-index: 2;
+    z-index: 3;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -27,7 +27,7 @@
         display: inline-block;
         line-height: #{64 / 24 * 1em};
     }
-    .md-menu {
+    .md-icon {
         width: 3em;
         height: 2.666em;
         color: $black;

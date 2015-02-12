@@ -8,10 +8,17 @@ Gabor.prototype.init = function(id) {
     this.canvas = document.getElementById(id);
     this.context = this.canvas.getContext('2d');
 	this.id = id;
-    this.width = this.canvas.width = this.context.width = $("#" + id).parent().width();
-    this.height = this.canvas.height = this.context.height = $("#" + id).parent().height();
+    this.width = this.canvas.width = this.context.width = $('#' + id).parent().width();
+    this.height = this.canvas.height = this.context.height = $('#' + id).parent().height();
     
-    $(this.canvas).on("click", function(event){
-    	that.emit("click", event);
+    $(this.canvas).on('click', function(event){
+    	that.$emit('click', event);
     });
 };
+Gabor.prototype.name = 'gabor';
+Gabor.prototype.title = 'Gabor Stimulu';
+Gabor.prototype.template = '<canvas id="gabor"></canvas>';
+Gabor.prototype.about = '<div>About Content Goes Here</div>';
+Gabor.prototype.logo = './src/img/gabor-card.jpg';
+Gabor.prototype.summary = 'Improve your vision by adapting your brain\'s plasticity.';
+Gabor.prototype.color = 'rgba(50,80,50, 1)';

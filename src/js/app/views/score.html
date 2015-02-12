@@ -3,12 +3,10 @@
 		<div class="title">Score</div>
 		<div class="row">
 			<div class="label">Hits</div>
-			<!-- <div class="value">{{hits}}</div> -->
 			<div class="value right score">{{hitsScore}}</div>
 		</div>
 		<div class="row">
 			<div class="label">Misses</div>
-			<!-- <div class="value">{{misses}}</div> -->
 			<div class="value right score">{{missesScore}}</div>
 		</div>
 		<div class="row" ng-if="difficulty > 1">
@@ -21,7 +19,7 @@
 		</div>
 		<div class="row">
 			<div class="">Total</div>
-			<div class="value right">{{levelScore}}</div>
+			<div class="value right">{{score.levelScore}}</div>
 		</div>
 		<div class="footer">
 			<button class="flat" ng-click="continue()">continue</button>

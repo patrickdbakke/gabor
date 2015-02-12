@@ -2,40 +2,50 @@
 
 angular.module('gabor')
     .config(function configureStates($stateProvider, $urlRouterProvider) {
-    	$urlRouterProvider.otherwise('/gabor/');
-        $urlRouterProvider.when('/', ['$match', function() {
-        	return '/gabor/';
-    	}]);
-        $urlRouterProvider.when('/gabor', ['$match', function() {
-            return '/gabor/';
-        }]);
+    	$urlRouterProvider.otherwise('/games');
 
 		$stateProvider
-            .state('gabor', {
-                url: '/gabor',
-                templateUrl: 'views/page.html',
-                controller: 'GameCtrl',
+            .state('root', {
+                abstract:true,
+                templateUrl:'views/page.html',
+                controller: 'GamesController',
+                url: '',
+            })
+            .state('root.games', {
+                url:'/games',
+                views: {
+                    'header@root': {
+                        templateUrl:'views/header.html',
+                    },
+                    'content@root': {
+                        templateUrl:'views/games.html',
+                    },
+                }
+            })
+            .state('root.games.game', {
+                abstract:true,
+                url: '/:gameName',
                 resolve: {
-                    gabor: [function(){
-                        return new Gabor();
+                    gameName: ['$stateParams', function($stateParams){
+                        return $stateParams.gameName;
                     }]
                 }
             })
-            .state("gabor.main", {
-                url: '/',
+            .state('root.games.game.about', {
+                url: '/about',
                 views: {
-                    header: {
-                        templateUrl:'views/header.html',
+                    'content@root': {
+                        controller: 'AboutController',
+                        templateUrl:'views/about.html',
                     },
-                    content: {
-                        templateUrl:'views/content.html',
-                        controller: ['$scope', 'gabor', function($scope, gabor){
-                            gabor.init("gabor");
-                            $scope.makeLevel(1);
-                        }],
-                    },
-                    footer: {
-                        templateUrl:'views/footer.html',
+                }
+            })
+            .state('root.games.game.play', {
+                url: '/play',
+                views: {
+                    'content@root': {
+                        controller: 'GameController',
+                        templateUrl:'views/game.html',
                     },
                 }
             });

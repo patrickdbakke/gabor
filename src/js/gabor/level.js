@@ -2,7 +2,7 @@
 Gabor.prototype.startLevel = function(numPatches, difficulty, callback) {
     var that = this;
     this.difficulty = difficulty;
-    that.emit("levelStart", difficulty);
+    that.$emit("levelStart", difficulty);
     var size = Math.max(this.width, this.height) / 8 / 2;
     function makePatches(){
         that.patches = [];
@@ -46,17 +46,17 @@ Gabor.prototype.startLevel = function(numPatches, difficulty, callback) {
     function onClick(event){
         var hitPatch = getHitPatch(event);
         if (hitPatch) {
-            that.emit("hit", hitPatch, difficulty);
+            that.$emit("hit", hitPatch, difficulty);
             that.patches = _.reject(that.patches, hitPatch);
         } else {
-            that.emit("miss", difficulty);
+            that.$emit("miss", difficulty);
         }
         drawPatches();
         checkVictory();
     }
     function checkVictory(){
         if(that.patches.length < 1){
-            that.emit("levelFinish", that.difficulty);
+            that.$emit("levelFinish", that.difficulty);
         }
     }
     function getHitPatch(event){
@@ -71,8 +71,8 @@ Gabor.prototype.startLevel = function(numPatches, difficulty, callback) {
     function distance(x1, y1, x2, y2){
         return Math.sqrt(((x1 - x2) * (x1 - x2)) + ((y1 -y2) * (y1 -y2)));
     }
-    this.off("click");
-    this.on("click", onClick);
+    this.$off("click");
+    this.$on("click", onClick);
     makePatches();
     drawPatches(true);
 };

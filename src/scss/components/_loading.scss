@@ -1,0 +1,31 @@
+#loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    z-index: 100;
+    background: #999;
+    text-align: center;
+    @include vertical-fix;
+    .ng-scope {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+    &.ready, &.loading {
+        display: inline-block;
+    }
+    .md-loader {
+        display: inline-block;
+        font-size: 1.5em;
+        height: 1em;
+        width: 1em;
+        padding: 1em;
+        background: inherit;
+        border-radius: 100em;
+    }
+}

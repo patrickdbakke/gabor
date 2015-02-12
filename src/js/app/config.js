@@ -13,4 +13,9 @@ angular.module('gabor')
         AnalyticsProvider.trackPages(true);
         AnalyticsProvider.useAnalytics(true);
         AnalyticsProvider.trackPrefix('gabor');
-    });
+    })
+    .constant("GAMES", [{
+        name: 'gabor',
+        class: Gabor
+    }
+    ]);

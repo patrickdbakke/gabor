@@ -5,7 +5,7 @@ angular.module("gabor")
 		function notification(message){
 			ModalService.showModal({
 				templateUrl: 'views/notification.html',
-				controller: 'notificationCtrl',
+				controller: 'NotificationController',
 				input: {
 					$timeout: $timeout
 				}
@@ -22,7 +22,7 @@ angular.module("gabor")
 		};
 	});
 angular.module('gabor')
-	.controller('notificationCtrl', function($scope, close, $timeout){
+	.controller('NotificationController', function($scope, close, $timeout){
 		$timeout(function(){
 			close(true);
 		}, 3000);

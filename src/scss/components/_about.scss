@@ -1,0 +1,25 @@
+#about {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    z-index: 1;
+    & > div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 1.5em;
+    }
+}
+
+#about-wrap {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    right: 50%;
+    bottom: 0;
+    left: 0;
+}

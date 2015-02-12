@@ -8,7 +8,6 @@ button {
     border: none;
     font-size: inherit;
     text-transform: uppercase;
-    color: $blue;
     height: 2em;
     vertical-align: middle;
     padding: 0 .5em;
@@ -18,6 +17,9 @@ button {
     cursor: pointer;
     &.flat {
         border: 1px solid transparent;
+    }
+    &.action {
+        color: $orange;
     }
     &:focus {
         outline: none;
@@ -46,5 +48,171 @@ button {
     &.right {
         left: auto;
         right: 2em;
+    }
+}
+
+.card {
+    background: $white;
+    min-height: 8em;
+    display: inline-block;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    width: 21.5em;
+    position: relative;
+    .card-logo {
+        display: block;
+        font-size: 1.5em;
+        padding: 1em;
+        height: 3em;
+        background-size: 100% auto;
+        background-position: center center;
+    }
+    .card-title {
+        background: $black;
+        color: white;
+        display: block;
+        padding: .6666em;
+        font-size: 1.5em;
+    }
+    .card-content {
+        padding: 1em;
+        line-height: 1.2em;
+    }
+    .card-actions {
+        border-top: 1px solid #ddd;
+        padding: .75em .6em;
+        button {
+            font-size: .85em;
+        }
+    }
+}
+
+$loaderColor1: $purple-400;
+$loaderColor2: $purple-700;
+$loaderTime: 1.5s;
+
+.md-loader {
+    position: relative;
+    .fill {
+        opacity: 1;
+        transition: top 1.5s ease, left 1.5s ease, right 1.5s ease, bottom 1.5s ease, opacity 1.5s ease;
+        background: $loaderColor1;
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        border-radius: 100em;
+        overflow: hidden;
+        -webkit-animation: loading-circle-3 #{$loaderTime * 6} #{$loaderTime * -1} infinite linear;
+        &:before, &:after {
+            position: Absolute;
+            height: 100%;
+            width: 50%;
+            content: '';
+            top: 0;
+            left: 0;
+            display: inline-block;
+            transform-origin: 100% 50%;
+            opacity: .99;
+        }
+        &:after {
+            -webkit-animation: loading-circle #{$loaderTime} infinite linear, loading-circle-3 #{$loaderTime * 6} infinite linear;
+            background: $loaderColor2;
+        }
+        &:before {
+            -webkit-animation: loading-circle-2 #{$loaderTime} infinite linear, loading-circle-3 #{$loaderTime * 6} infinite linear;
+            background: $loaderColor2;
+        }
+    }
+    .md {
+        &:before {
+            content: "\f0c9";
+        }
+        cursor: disabled;
+        background: $red;
+    }
+}
+
+.loading .md-loader, .md-loader.loading {
+    cursor: pointer;
+    .fill {
+        top: -.2em;
+        left: -.2em;
+        right: -.2em;
+        bottom: -.2em;
+        opacity: 1;
+    }
+    .md {
+        &:before {
+            content: "\f0b9";
+        }
+        background: $green;
+    }
+}
+
+@-webkit-keyframes loading-circle {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(540deg);
+    }
+}
+
+
+@-webkit-keyframes loading-circle-2 {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(540deg);
+    }
+}
+
+
+@-webkit-keyframes loading-circle-3 {
+    0% {
+        background: $loaderColor2;
+    }
+    16.666% {
+        background: $loaderColor2;
+    }
+    16.667% {
+        background: $loaderColor1;
+    }
+    33.333% {
+        background: $loaderColor1;
+    }
+    33.334% {
+        background: $loaderColor2;
+    }
+    50% {
+        background: $loaderColor2;
+    }
+    50.01% {
+        background: $loaderColor1;
+    }
+    66.666% {
+        background: $loaderColor1;
+    }
+    66.667% {
+        background: $loaderColor2;
+    }
+    83.333% {
+        background: $loaderColor2;
+    }
+    83.334% {
+        background: $loaderColor1;
+    }
+    100% {
+        background: $loaderColor1;
     }
 }

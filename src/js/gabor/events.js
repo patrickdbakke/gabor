@@ -1,5 +1,6 @@
 "use strict";
-Gabor.prototype.on = function(eventName, eventHandler, scope) {
+Gabor.prototype.$on = function(eventName, eventHandler, scope) {
+	console.log("$on", eventName);
 	var that = this;
 	that.__binds = that.__binds || {};
 	that.__binds[eventName] = that.__binds[eventName] || [];
@@ -8,8 +9,11 @@ Gabor.prototype.on = function(eventName, eventHandler, scope) {
 		scope: scope || this
 	});
 };
-Gabor.prototype.off = function(eventName, func) {
+Gabor.prototype.$off = function(eventName, func) {
 	var that = this;
+	if(eventName === true){
+		that.__binds = {};
+	}
 	that.__binds = that.__binds || {};
 	if(that.__binds[eventName]){
 		if (func) {
@@ -21,7 +25,7 @@ Gabor.prototype.off = function(eventName, func) {
 		}
 	}
 };
-Gabor.prototype.emit = function() {
+Gabor.prototype.$emit = function() {
 	var that = this;
 	var eventName = arguments[0];
 	var args = [].splice.call(arguments, 1);
